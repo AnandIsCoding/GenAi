@@ -1,8 +1,9 @@
 // FeedbackDashboard.jsx
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+
 import { loadFeedbacks, playSuccessSound, saveFeedbacks } from "../utils/Feedback";
 
 export default function Feedback() {
@@ -93,7 +94,12 @@ export default function Feedback() {
 };
 
   return (
-    <div className="bg-black min-h-screen flex flex-col items-center justify-center px-1 md:px-4">
+    <div style={{
+              backgroundImage: `url('https://cdn.dribbble.com/userupload/44735735/file/7445b7a6edb4e7b439ac67eefefa126e.jpg?resize=1504x1127&vertical=center)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "brightness(1)",
+            }} className="bg-black min-h-screen flex flex-col items-center justify-center px-1 md:px-4">
       {/* Form Card */}
       <div className="w-full max-w-lg bg-gray-900 shadow-xl rounded-2xl p-1 md:p-8 transform transition duration-500 hover:scale-[1.01] hover:shadow-indigo-500/30">
         <h1 className="text-3xl font-bold text-indigo-400 mb-8 text-center">
