@@ -21,6 +21,6 @@ export const loadFeedbacks = () => {
 };
 
 export const playSuccessSound = () => {
-  const audio = new Audio("src/music/sound2.mp3"); // file inside public/
+  const audio = new Audio("/sound2.mp3"); // file inside public/
   audio.play().catch((err) => console.log("Sound play error:", err));
 };
