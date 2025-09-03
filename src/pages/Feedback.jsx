@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
+import StarsRating from "../components/star/StarRating";
 import { loadFeedbacks, playSuccessSound, saveFeedbacks } from "../utils/Feedback";
 
 export default function Feedback() {
@@ -16,6 +17,12 @@ export default function Feedback() {
   const [email, setEmail] = useState("");
   const [rating, setRating] = useState("");
   const [comment, setComment] = useState("");
+
+  const handleRatingChange = (ratingvalue) =>{
+    setRating(ratingvalue)
+  }
+
+
 
   // 🔹 Load feedbacks from localStorage when component mounts
   useEffect(() => {
@@ -39,6 +46,7 @@ export default function Feedback() {
     toast.error("Looks like you’ve already submitted Feedback. We appreciate your enthusiasm!");
     return;
   }
+  if(rating <= 0) return toast.error('Please provide rating by clicking on stars ⭐')
   // Step 1: show AI analyzing toast
   let toastId = toast.loading("🤖 Analyzing your feedback with AI...");
 
@@ -93,6 +101,8 @@ export default function Feedback() {
   }
 };
 
+
+
   return (
     <div style={{
               backgroundImage: `url('https://cdn.dribbble.com/userupload/44735735/file/7445b7a6edb4e7b439ac67eefefa126e.jpg?resize=1504x1127&vertical=center)`,
@@ -101,12 +111,12 @@ export default function Feedback() {
               filter: "brightness(1)",
             }} className="bg-black min-h-screen flex flex-col items-center justify-center px-1 md:px-4">
       {/* Form Card */}
-      <div className="w-full max-w-lg bg-gray-900 shadow-xl rounded-2xl p-1 md:p-8 transform transition duration-500 hover:scale-[1.01] hover:shadow-indigo-500/30">
-        <h1 className="text-3xl font-bold text-indigo-400 mb-8 text-center">
-          Feedback Dashboard
+      <div className="w-full max-w-lg relative overflow-hidden bg-gray-900 shadow-xl rounded-2xl p-2 md:p-8 transform transition duration-500 hover:scale-[1.01] hover:shadow-indigo-500/30">
+        <h1 className="w-full absolute top-0 left-0 px-8 py-2 bg-indigo-600 text-3xl font-bold text-white  text-center">
+          Valuable Feedback 
         </h1>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6 mt-14 md:mt-8">
           {/* Email */}
           <div>
             <label
@@ -121,7 +131,7 @@ export default function Feedback() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2  text-white border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-gray-500"
+              className="w-full px-6 py-4 bg-black text-white border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-gray-500"
               placeholder="Enter your email"
             />
           </div>
@@ -132,19 +142,9 @@ export default function Feedback() {
               htmlFor="rating"
               className="block text-sm font-medium text-white mb-2 cursor-pointer"
             >
-              Rating (1–5)
+              Selected : {rating === '' ? 0 : rating} star
             </label>
-            <input
-              id="rating"
-              type="number"
-              min="1"
-              max="5"
-              value={rating}
-              onChange={(e) => setRating(e.target.value)}
-              required
-              className="w-full px-4 py-2 bg-black text-white border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-gray-500"
-              placeholder="Give a rating"
-            />
+            <StarsRating value={0} onChange={handleRatingChange} />
           </div>
 
           {/* Comment */}
@@ -199,7 +199,7 @@ export default function Feedback() {
                     <td className="py-3 px-4">{f.email}</td>
                     <td className="py-3 px-4">{f.rating}</td>
                     <td className="py-3 px-4">{f.comment}</td>
-                    <td className="py-3 px-4 text-indigo-400">{f.category}</td>
+                    <td className="py-3 px-4 ">{f.category}</td>
                   </tr>
                 ))}
               </tbody>
