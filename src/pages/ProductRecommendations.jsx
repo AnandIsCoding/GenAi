@@ -1,128 +1,141 @@
 import React, { useState } from "react";
 
-// Large product dataset without images
-import { products } from '../utils/Products';
+import { products } from "../utils/Products";
+
 const allProducts = products;
 
 function ProductRecommendations() {
   const [selected, setSelected] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
-  const [loading, setLoading] = useState(false); // Added for loading state
+  const [loading, setLoading] = useState(false);
 
-  // Toggle selection
   const toggleSelect = (id) => {
-    setSelected(prev =>
-      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
 
-  // Fetch recommendations from n8n webhook
   const getRecommendations = async () => {
     if (selected.length === 0) {
       alert("Please select at least one product.");
       return;
     }
-
-    setLoading(true); // Set loading to true
-    setRecommendations([]); // Clear previous recommendations
+    setLoading(true);
+    setRecommendations([]);
 
     const payload = {
-      selectedProducts: allProducts.filter(p => selected.includes(p.id)),
-      allProducts
+      selectedProducts: allProducts.filter((p) => selected.includes(p.id)),
+      allProducts,
     };
 
     try {
       const response = await fetch(import.meta.env.VITE_PRODUCT_RECOMMENDATION, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
-
-
-      // **FIX**: Check if the response is successful before parsing JSON
-      if (!response.ok) {
-        // Get the raw text from the server response to see the actual error
-        const errorText = await response.text();
-        console.error("Server responded with an error:", response.status, errorText);
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      console.log('response is --->> ',response)
-
       const text = await response.text();
-const data = text ? JSON.parse(text) : {};
-
-      console.log("Received data:", data);
-      console.log('recommendations --> ',data.recommendations || [])
+      const data = text ? JSON.parse(text) : {};
       setRecommendations(data.recommendations || []);
-
     } catch (error) {
       console.error("Failed to fetch recommendations:", error);
-      alert("Error fetching recommendations. Check the browser console for more details.");
     } finally {
-      setLoading(false); // Set loading to false in both success and error cases
+      setLoading(false);
     }
   };
 
-  return (
-    <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <h1>Product Recommendations</h1>
-      <p>Select one or more products below to get personalized recommendations.</p>
+  const colors = [
+    "bg-red-50",
+    "bg-blue-50",
+    "bg-green-50",
+    "bg-yellow-50",
+    "bg-purple-50",
+    "bg-pink-50",
+    "bg-indigo-50",
+  ];
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "15px" }}>
-        {allProducts.map(product => (
-          <div
-            key={product.id}
-            style={{
-              border: selected.includes(product.id) ? "2px solid #10B981" : "1px solid #ccc",
-              borderRadius: "8px",
-              padding: "10px",
-              width: "150px",
-              cursor: "pointer",
-              transition: "transform 0.2s",
-              boxShadow: selected.includes(product.id) ? "0 4px 6px rgba(0,0,0,0.1)" : "none"
-            }}
-            onClick={() => toggleSelect(product.id)}
-          >
-            <h4>{product.name}</h4>
-            <p style={{ fontSize: "14px" }}>Category: {product.category}</p>
-            <p style={{ fontSize: "14px" }}>Price: ₹{product.price}</p>
-            <p style={{ fontSize: "12px", color: selected.includes(product.id) ? "#10B981" : "#666" }}>
-              {selected.includes(product.id) ? "✓ Selected" : "Click to select"}
+  return (
+    <div
+      className="min-h-screen flex flex-col lg:flex-row text-white"
+      style={{
+        backgroundImage: `url('https://cdn.dribbble.com/userupload/44764530/file/3ccc259edf13ed795acbf83a87b1b447.png?resize=1504x1736&vertical=center')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Left Panel */}
+      <div className="w-full lg:w-3/5 h-full overflow-y-auto   p-6 custom-scrollbar">
+        {/* Top heading + button row */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-black">🤖 AI Product Recommendations</h1>
+            <p className="text-black text-sm sm:text-base">
+              Select products (scrollable) & click button.
             </p>
           </div>
-        ))}
+          <button
+            onClick={getRecommendations}
+            disabled={loading}
+            className={`px-4 cursor-pointer sm:px-6 py-2 sm:py-3 rounded-full text-white font-medium transition 
+            ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-indigo-600 hover:to-blue-500"
+            }`}
+          >
+            {loading ? "🤖 Getting Recommendations..." : "Get Recommendations"}
+          </button>
+        </div>
+
+        {/* Products grid */}
+        <div className="flex flex-wrap gap-4 sm:gap-6 justify-center">
+          {allProducts.map((product, index) => {
+            const bgColor = colors[index % colors.length];
+            return (
+              <div
+                key={product.id}
+                className={`w-40 sm:w-44 p-4 rounded-xl cursor-pointer transition-transform transform hover:scale-105
+                  border ${selected.includes(product.id) ? `${bgColor}  shadow-lg` : `${bgColor} border-white/20`}`}
+                onClick={() => toggleSelect(product.id)}
+              >
+                <h4 className="font-semibold text-black/90">{product.name}</h4>
+                <p className="text-sm text-black/80">Category: {product.category}</p>
+                <p className="text-sm text-black/80">₹{product.price}</p>
+                <p className={`text-xs mt-1 ${selected.includes(product.id) ? "text-emerald-600" : "text-gray-700"}`}>
+                  {selected.includes(product.id) ? "✓ Selected" : "Click to select"}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
-      <button
-        onClick={getRecommendations}
-        disabled={loading} // Disable button while loading
-        style={{
-          marginTop: "20px",
-          padding: "12px 24px",
-          cursor: "pointer",
-          backgroundColor: loading ? "#ccc" : "#007bff",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          fontSize: "16px"
-        }}
-      >
-        {loading ? "Getting Recommendations..." : "Get Recommendations"}
-      </button>
-
-      {recommendations.length > 0 && (
-        <div style={{ marginTop: "30px" }}>
-          <h2>Recommended For You</h2>
-          <ul style={{ listStyleType: "none", padding: 0 }}>
-            {recommendations.map(item => (
-              <li key={item.id} style={{ borderBottom: "1px solid #eee", padding: "10px 0" }}>
-                <strong>{item.name}</strong> - ₹{item.price} ({item.category})
-              </li>
-            ))}
-          </ul>
+      {/* Right Panel */}
+      <div className="w-full lg:w-2/5 h-full overflow-y-auto p-6 mt-6 lg:mt-0">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Recommended For You</h2>
+        {recommendations.length === 0 && (
+          <p className="text-white/70 text-sm sm:text-base">
+            No recommendations yet. Select products & click button.
+          </p>
+        )}
+        {/* grid of small cards */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          {recommendations.map((item, index) => {
+            const bgColor = colors[index % colors.length];
+            return (
+              <div
+                key={index}
+                className={`w-32 sm:w-40 p-4 rounded-xl ${bgColor} backdrop-blur-md 
+                  transition-transform transform hover:scale-105 shadow-md`}
+              >
+                <h4 className="font-semibold text-gray-900 text-sm mb-1">{item.name}</h4>
+                <p className="text-xs text-gray-700">₹{item.price}</p>
+                <p className="text-xs text-gray-700">{item.category}</p>
+              </div>
+            );
+          })}
         </div>
-      )}
+      </div>
     </div>
   );
 }
