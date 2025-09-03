@@ -14,12 +14,12 @@ const projects = [
     githubLink: "https://github.com/AnandIsCoding/GenAi",
   },
   {
-    title: "Another GenAi Projects with Awesome Features with RAG, n8n workflows, Gemini",
+    title: "E-Commerce Product Recommendation system using n8n",
     description:
-      "This is a placeholder for my upcoming GenAi projects with awesome features.",
-    image: "/ComingSoon.jpg",
-    liveLink: "/feedback",
-    githubLink: "#",
+      "This project includes a real life use case of AI Agent automation using n8n",
+    image: "/ProductRecommendation.png",
+    liveLink: "/product-recommendation",
+    githubLink: "https://github.com/AnandIsCoding/GenAi",
   },
 ];
 

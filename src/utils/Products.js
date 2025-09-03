@@ -1,0 +1,22 @@
+export const products = [
+  { "id": 1, "name": "Laptop", "category": "Electronics", "price": 55000 },
+  { "id": 2, "name": "Smartphone", "category": "Electronics", "price": 25000 },
+  { "id": 3, "name": "Headphones", "category": "Electronics", "price": 2000 },
+  { "id": 4, "name": "Smartwatch", "category": "Electronics", "price": 5000 },
+  { "id": 5, "name": "Keyboard", "category": "Accessories", "price": 1200 },
+  { "id": 6, "name": "Mouse", "category": "Accessories", "price": 800 },
+  { "id": 7, "name": "Gaming Chair", "category": "Furniture", "price": 12000 },
+  { "id": 8, "name": "Desk Lamp", "category": "Furniture", "price": 1500 },
+  { "id": 9, "name": "Bluetooth Speaker", "category": "Electronics", "price": 3000 },
+  { "id": 10, "name": "Backpack", "category": "Fashion", "price": 2000 },
+  { "id": 11, "name": "Sunglasses", "category": "Fashion", "price": 1200 },
+  { "id": 12, "name": "Running Shoes", "category": "Fashion", "price": 3500 },
+  { "id": 13, "name": "Jeans", "category": "Fashion", "price": 1500 },
+  { "id": 14, "name": "T-shirt", "category": "Fashion", "price": 800 },
+  { "id": 15, "name": "Coffee Maker", "category": "Home Appliances", "price": 4000 },
+  { "id": 16, "name": "Microwave Oven", "category": "Home Appliances", "price": 7000 },
+  { "id": 17, "name": "Electric Kettle", "category": "Home Appliances", "price": 1500 },
+  { "id": 18, "name": "Vacuum Cleaner", "category": "Home Appliances", "price": 8000 },
+  { "id": 19, "name": "Bookshelf", "category": "Furniture", "price": 6000 },
+  { "id": 20, "name": "Desk Organizer", "category": "Accessories", "price": 500 }
+]
