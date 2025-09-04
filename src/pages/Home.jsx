@@ -3,6 +3,8 @@ import { useEffect,useRef, useState } from "react";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
+import ScrollToTop from "../utils/ScrollToTop";
+
 const projects = [
   {
     title:
@@ -55,6 +57,7 @@ function Home() {
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden flex flex-wrap justify-center md:items-center gap-6 p-4 pt-18 md:pt-0">
+     <ScrollToTop/>
       {/* Mute/Unmute Button */}
       <button
         onClick={toggleMute}

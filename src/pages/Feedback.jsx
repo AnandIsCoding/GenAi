@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 
 import StarsRating from "../components/star/StarRating";
 import { loadFeedbacks, playSuccessSound, saveFeedbacks } from "../utils/Feedback";
+import ScrollToTop from "../utils/ScrollToTop";
 
 export default function Feedback() {
   // init Gemini client
@@ -110,6 +111,7 @@ export default function Feedback() {
               backgroundPosition: "center",
               filter: "brightness(1)",
             }} className="bg-black min-h-screen flex flex-col items-center justify-center px-1 md:px-4">
+             <ScrollToTop/>
       {/* Form Card */}
       <div className="w-full max-w-lg relative overflow-hidden bg-gray-900 shadow-xl rounded-2xl p-2 md:p-8 transform transition duration-500 hover:scale-[1.01] hover:shadow-indigo-500/30">
         <h1 className="w-full absolute top-0 left-0 px-8 py-2 bg-indigo-600 text-3xl font-bold text-white  text-center">
