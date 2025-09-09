@@ -14,6 +14,7 @@ This repo contains:
 - **Combined AI – Multi-Tool AI Platform**  
 - **Feedback System with AI Analysis + n8n + Spreadsheet + Gmail Auto Response + Telegram Integration**  
 - **E-Commerce Product Recommendation System using n8n**  
+- **AI Ticket System – Automated Ticket Management with AI + n8n**  
 
 …and more experiments coming soon 🚀.
 
@@ -22,7 +23,8 @@ This repo contains:
 ## 🖥️ Projects  
 
 ### 1️⃣ Combined AI – Multi-Tool AI Platform  
-An all-in-one AI web application. It features text-to-image generation, background and object removal, résumé analysis, and a community section where users can publish and like creations.  
+
+An all-in-one AI web application. It features blog title generation, article generation, text-to-image generation, background and object removal, résumé analysis, and a community section where users can publish and like creations.  
 Powered by Google Gemini for LLM responses and ClipDrop AI.  
 
 ![Combined AI Screenshot](public/CombinedAi.png)
@@ -33,6 +35,7 @@ Powered by Google Gemini for LLM responses and ClipDrop AI.
 ---
 
 ### 2️⃣ Feedback System with AI Analysis + n8n + Spreadsheet + Gmail Auto Response + Telegram Integration  
+
 A modern feedback system integrating n8n automations, spreadsheets, Gmail auto-response, and Telegram notifications. It demonstrates how AI analysis can automate incoming feedback processing.  
 
 - Collects feedback from multiple channels  
@@ -49,6 +52,7 @@ A modern feedback system integrating n8n automations, spreadsheets, Gmail auto-r
 ---
 
 ### 3️⃣ E-Commerce Product Recommendation System using n8n  
+
 An AI-powered recommendation engine for e-commerce built with n8n automations. This project showcases a real-life use case of AI Agent workflows to analyse user behaviour, personalise product suggestions, and automate marketing flows.  
 
 - Integrated with external APIs  
@@ -59,6 +63,23 @@ An AI-powered recommendation engine for e-commerce built with n8n automations. T
 
 **Live Demo:** /product-recommendation  
 **Source Code:** [GitHub Repo](https://github.com/AnandIsCoding/GenAi)
+
+---
+
+### 4️⃣ AI Ticket System – Automated Ticket Management with AI + n8n  
+
+A smart ticketing platform that automates ticket assignment and analysis.  
+
+- AI-driven ticket prioritisation  
+- Automatic moderator assignment  
+- Automated email notifications  
+- Orchestrated with **n8n workflows**  
+- Powered by **Google Gemini** for natural language understanding  
+
+![AI Ticket System Screenshot](public/TicketSystem.png)
+
+**Live Demo:** [ai-ticket-system-client.vercel.app](https://ai-ticket-system-client.vercel.app/)  
+**Source Code:** [GitHub Repo](https://github.com/AnandIsCoding/Ai-Ticket-System)
 
 ---
 
@@ -79,6 +100,8 @@ Together they allow you to prototype sophisticated, AI-powered business processe
 
 ---
 
-## Anand Jha 🌿
-**Portfolio:** [Portfolio](https://anandjii.web.app)
 
+
+## Anand Jha 🌿
+
+Portfolio: https://anandjii.web.app
