@@ -36,7 +36,7 @@ Powered by Google Gemini for LLM responses and ClipDrop AI.
 
 
 
-### 4️⃣ AI Ticket System – Automated Ticket Management with AI + n8n  
+### 2️⃣  AI Ticket System – Automated Ticket Management with AI + n8n  
 
 A smart ticketing platform that automates ticket assignment and analysis.  
 
@@ -55,7 +55,7 @@ A smart ticketing platform that automates ticket assignment and analysis.
 ---
 
 
-### 2️⃣ Feedback System with AI Analysis + n8n + Spreadsheet + Gmail Auto Response + Telegram Integration  
+### 3️⃣ Feedback System with AI Analysis + n8n + Spreadsheet + Gmail Auto Response + Telegram Integration  
 
 A modern feedback system integrating n8n automations, spreadsheets, Gmail auto-response, and Telegram notifications. It demonstrates how AI analysis can automate incoming feedback processing.  
 
@@ -72,7 +72,7 @@ A modern feedback system integrating n8n automations, spreadsheets, Gmail auto-r
 
 ---
 
-### 3️⃣ E-Commerce Product Recommendation System using n8n  
+### 4️⃣ E-Commerce Product Recommendation System using n8n  
 
 An AI-powered recommendation engine for e-commerce built with n8n automations. This project showcases a real-life use case of AI Agent workflows to analyse user behaviour, personalise product suggestions, and automate marketing flows.  
 

@@ -16,10 +16,10 @@ const projects = [
     githubLink: "https://github.com/AnandIsCoding/Combined-AI",
   },
   {
-  title: "AI Ticket System – Automated Ticket Management with AI + Gemini + Inngest",
+  title: "AI Ticket System – Automated Ticket Management with Moderator assignment (skills requirement matching using AI) + Gemini + Inngest",
   description:
-    "A smart ticketing platform that automates ticket assignment to moderator and analysis. It features: AI-driven ticket prioritization, moderator assignment, and automated email notifications. Relevant skills and moderator assignment powered by Google Gemini to analyze tickets in real time.",
-  image: "/TicketHome.png",
+    "A smart ticketing platform that automates ticket assignment to moderator based on skills required and analysis. AI-driven ticket prioritization, and automated email notifications",
+  image: "/TicketSystem.png",
   liveLink: "https://ai-ticket-system-client.vercel.app/",
   githubLink: "https://github.com/AnandIsCoding/Ai-Ticket-System",
 },
@@ -102,7 +102,7 @@ function Home() {
 
       {/* Header */}
     
-<div className="relative z-20 text-center mb-12 mt-10">
+<div className="relative z-20 text-center mb-12 mt-2">
   <motion.h1
     className="text-4xl md:text-5xl font-extrabold text-white"
     initial={{ opacity: 0, y: -50 }}           // start invisible, above
