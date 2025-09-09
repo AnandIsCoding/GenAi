@@ -34,6 +34,27 @@ Powered by Google Gemini for LLM responses and ClipDrop AI.
 
 ---
 
+
+
+### 4️⃣ AI Ticket System – Automated Ticket Management with AI + n8n  
+
+A smart ticketing platform that automates ticket assignment and analysis.  
+
+- AI-driven ticket prioritisation  
+- Automatic moderator assignment  
+- Automated email notifications  
+- Orchestrated with **n8n workflows**  
+- Powered by **Google Gemini** for natural language understanding  
+
+![AI Ticket System Screenshot](public/TicketSystem.png)
+
+**Live Demo:** [ai-ticket-system-client.vercel.app](https://ai-ticket-system-client.vercel.app/)  
+**Source Code:** [GitHub Repo](https://github.com/AnandIsCoding/Ai-Ticket-System)
+
+
+---
+
+
 ### 2️⃣ Feedback System with AI Analysis + n8n + Spreadsheet + Gmail Auto Response + Telegram Integration  
 
 A modern feedback system integrating n8n automations, spreadsheets, Gmail auto-response, and Telegram notifications. It demonstrates how AI analysis can automate incoming feedback processing.  
