@@ -25,7 +25,7 @@ This repo contains:
 An all-in-one AI web application. It features text-to-image generation, background and object removal, résumé analysis, and a community section where users can publish and like creations.  
 Powered by Google Gemini for LLM responses and ClipDrop AI.  
 
-![Combined AI Screenshot](../GenAi/public/CombinedAi.png)
+![Combined AI Screenshot](public/CombinedAi.png)
 
 **Live Demo:** [mycombinedai.vercel.app](https://mycombinedai.vercel.app/)  
 **Source Code:** [GitHub Repo](https://github.com/AnandIsCoding/Combined-AI)
@@ -41,7 +41,7 @@ A modern feedback system integrating n8n automations, spreadsheets, Gmail auto-r
 - Sends personalised auto-responses via Gmail  
 - Notifies teams instantly on Telegram  
 
-![Feedback Dashboard Screenshot](../GenAi/public/FeedbackDashboardImage.png)
+![Feedback Dashboard Screenshot](public/FeedbackDashboardImage.png)
 
 **Live Demo:** /feedback  
 **Source Code:** [GitHub Repo](https://github.com/AnandIsCoding/GenAi)
@@ -55,7 +55,7 @@ An AI-powered recommendation engine for e-commerce built with n8n automations. T
 - Real-time recommendations  
 - Automated marketing actions  
 
-![Product Recommendation Screenshot](../GenAi/public/ProductRecommendation.png)
+![Product Recommendation Screenshot](public/ProductRecommendation.png)
 
 **Live Demo:** /product-recommendation  
 **Source Code:** [GitHub Repo](https://github.com/AnandIsCoding/GenAi)
