@@ -33,6 +33,16 @@ const projects = [
     githubLink: "https://github.com/AnandIsCoding/GenAi",
   },
   {
+    title:
+      "Portfolio contact form automated with n8n + Spreadsheet data entry + Gmail Auto Response + Telegram Integration",
+    description:
+      "A modern contact form integrating n8n automations, spreadsheets, Gmail auto-response, and Telegram notifications. Explore the live demo or view source code.",
+    image: "/Contact.png",
+    liveLink: "https://anandjii.web.app/contact",
+    githubLink: "https://github.com/AnandIsCoding/Portfolio",
+  },
+
+  {
     title: "E-Commerce Product Recommendation System using n8n",
     description:
       "An AI-powered recommendation engine for e-commerce built with n8n automations. This project showcases a real-life use case of AI Agent workflows to analyze user behavior, personalize product suggestions, and automate marketing flows. Integrated with external APIs and real-time recommendations.",
